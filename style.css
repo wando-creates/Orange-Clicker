@@ -1,0 +1,130 @@
+
+@font-face {
+    font-family: "font";
+    src: url("fonts/bloons.ttf") format('truetype');
+}
+
+* {
+    cursor: url("images/orange _slic.png")16 16, auto;
+}
+
+body {
+    cursor: url("images/orange _slic.png")16 16, auto;
+    background: rgba(187, 125, 43, 0.325);
+    color: rgba(196, 178, 178, 0.858);
+    font-family: "font";
+    margin: 0;
+}
+
+#game {
+    display: flex;
+    height: 100vh;
+}
+
+#left-panel { 
+    flex: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#right-panel {
+    width: 300px;
+    background: rgb(99, 52, 16);
+    padding: 20px;
+    position: fixed;
+    right: -300px;
+    top: 0;
+    height:  100vh;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+#right-panel:hover {
+    right: 0;
+}
+
+#orange {
+    font-size: 120px;
+    user-select: none;
+    transition: transform 0.1s;
+}
+
+#orange:active {
+    transform: scale(0.9);
+}
+
+#shop {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shop-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(177, 89, 16, 0.181);
+    color: rgb(237, 233, 192);
+    text-align: left;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.shop-btn:hover {
+    transform: scale(1.02);
+}
+
+.shop-btn.affordable {
+    background: rgba(150, 84, 22, 0.657);
+}
+
+.shop-btn.locked {
+    background: rgba(75, 34, 6, 0.32);
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.shop-divider {
+    border: none;
+    border-top: 2px rgba(253, 253, 253, 0.546);
+    margin: 8px 0;
+}
+
+.sohp-label {
+    font-size: 11px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 4px 0;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.btn-info {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    font-size: 14px;
+    flex: 1px;
+}
+
+.btn-info strong {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.btn-owned {
+    font-size: 22px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: right;
+}
