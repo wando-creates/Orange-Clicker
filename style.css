@@ -4,16 +4,19 @@
     src: url("fonts/bloons.ttf") format('truetype');
 }
 
-* {
-    cursor: url("images/orange _slic.png")16 16, auto;
+*, *::before, *::after{
+    cursor: url("images/orange_slice.png") 16 16, auto !important;
 }
 
 body {
-    cursor: url("images/orange _slic.png")16 16, auto;
     background: rgba(187, 125, 43, 0.325);
     color: rgba(196, 178, 178, 0.858);
     font-family: "font";
     margin: 0;
+}
+
+button {
+    font-family: "font";
 }
 
 #game {
@@ -29,7 +32,7 @@ body {
     justify-content: center;
 }
 
-#right-panel {
+#right-panel{
     width: 300px;
     background: rgb(99, 52, 16);
     padding: 20px;
@@ -95,8 +98,8 @@ body {
     margin: 8px 0;
 }
 
-.sohp-label {
-    font-size: 11px;
+.shop-label {
+    font-size: 15px;
     opacity: 0.6;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -104,8 +107,8 @@ body {
 }
 
 .btn-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 

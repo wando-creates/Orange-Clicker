@@ -39,6 +39,7 @@ const upgrades = [
 
 const manualUpgrades = [
     {name: "Better Click", cost: 100, opc: 1, owned: 0, icon: null},
+    {name: "Super Strong Click", cost: 10000, opc: 100, owned: 0, icon: null}
 ]
 
 function buyUpgrades(index) { //Upgrade function - linked with const upgrades
@@ -68,8 +69,7 @@ function renderShop() {
     const iconBar = document.getElementById("icon-bar")
     shop.innerHTML = "";
     shop.innerHTML += `
-    <p class="shop-label">Passive Upgrades</p>
-    <hr class="shop-divider>`
+    <p class="shop-label">Passive Upgrades</p>`
     upgrades.forEach((u, i) => {
         const canAfford = oranges >= u.cost;
         shop.innerHTML += `
@@ -88,8 +88,7 @@ function renderShop() {
     });
     
     shop.innerHTML += `
-    <p class="shop-label">Click Upgrades</p>
-    <hr class="shop-divider">`
+    <p class="shop-label">Upgrades</p>`
     manualUpgrades.forEach((m, i) => {
         const canAfford = oranges >= m.cost;
         shop.innerHTML += `
