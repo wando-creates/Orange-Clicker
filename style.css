@@ -9,8 +9,11 @@
 }
 
 body {
-    background: rgba(187, 125, 43, 0.325);
-    color: rgba(196, 178, 178, 0.858);
+    background: linear-gradient(45deg, rgba(203, 128, 67, 0.483),
+    rgba(139, 90, 62, 0.811), 
+    rgb(147, 118, 90));
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
     font-family: "font";
     margin: 0;
 }
@@ -22,6 +25,7 @@ button {
 #game {
     display: flex;
     height: 100vh;
+    z-index: 1;
 }
 
 #left-panel { 
@@ -53,11 +57,45 @@ button {
     font-size: 120px;
     user-select: none;
     transition: transform 0.1s;
+    z-index: 1;
 }
 
 #orange:active {
     transform: scale(0.9);
 }
+
+#bg-oranges {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-orange {
+    position: absolute;
+    top: -60px;
+    animation: floatDown linear infinite;
+    opacity: 0.6;
+}
+
+.float-text {
+    position: fixed;
+    font-size: 20px;
+    font-family: "font";
+    color: rgba(255, 72, 0, 0.612);
+    pointer-events: none;
+    z-index: 999;
+    animation: floatUp 1s ease-out forwards;
+}
+
+#count {
+    transition: transform 0.1s;
+}
+
 
 #shop {
     display: flex;
@@ -130,4 +168,40 @@ button {
     font-weight: bold;
     min-width: 30px;
     text-align: right;
+}
+
+
+.slice {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    animation: fall 1s ease-in forwards;
+    z-index: 999;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes gradientShift {
+    0% {background-position: 0% 50%; }
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+@keyframes floatDown {
+    0% {transform: translateY(0) rotate(0deg);}
+    100% {transform: translateY(110vh) rotate(360deg);}
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(-80px); opacity: 0;}
 }
